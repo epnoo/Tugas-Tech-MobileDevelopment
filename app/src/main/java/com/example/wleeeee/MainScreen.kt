@@ -39,7 +39,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
         NavItem("Beranda", Icons.Rounded.Home ),
         NavItem("Jelajahi", Icons.Rounded.List ),
         NavItem("Akun", Icons.Rounded.Person),
-        NavItem("Detail", Icons.Rounded.Email)
+
     )
 
     var selectedIndex by remember {
@@ -77,7 +77,7 @@ fun ContentScreen (modifier: Modifier = Modifier, selectedIndex : Int) {
         0-> HomePage()
         1-> ListPage()
         2-> AccountPage()
-        3 -> DetailPage()
+
     }
 }
 
