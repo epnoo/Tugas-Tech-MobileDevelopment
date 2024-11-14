@@ -1,6 +1,7 @@
 package com.example.wleeeee.pages
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -29,11 +30,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.wleeeee.FileItems
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomePage(modifier: Modifier = Modifier) {
+fun HomePage( modifier: Modifier = Modifier) {
     val fileItemsList = listOf(
         FileItems("Catatan MTK", "Dibuka pada tanggal 17 Agustus 2024"),
         FileItems("Jetpack Compose", "Dibuka pada tanggal 12 Januari 2024"),
@@ -95,9 +97,12 @@ fun HomePage(modifier: Modifier = Modifier) {
                     ) {
                         items(fileItemsList) { item ->
                             Card(
+
                                 modifier = Modifier
                                     .padding(8.dp)
                                     .size(120.dp),
+
+
                                 colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF)),
 
                                 ) {

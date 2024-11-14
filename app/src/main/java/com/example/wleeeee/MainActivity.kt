@@ -9,8 +9,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.internal.composableLambda
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.example.wleeeee.pages.AccountPage
+import com.example.wleeeee.pages.HomePage
+import com.example.wleeeee.pages.ListPage
 import com.example.wleeeee.ui.theme.WleeeeeTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +25,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             MainScreen()
         }
     }
 }
+

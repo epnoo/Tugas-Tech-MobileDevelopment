@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.List
 import androidx.compose.material.icons.rounded.Person
@@ -27,6 +28,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.input.pointer.motionEventSpy
 import com.example.wleeeee.pages.AccountPage
+import com.example.wleeeee.pages.DetailPage
 import com.example.wleeeee.pages.HomePage
 import com.example.wleeeee.pages.ListPage
 
@@ -37,6 +39,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
         NavItem("Beranda", Icons.Rounded.Home ),
         NavItem("Jelajahi", Icons.Rounded.List ),
         NavItem("Akun", Icons.Rounded.Person),
+        NavItem("Detail", Icons.Rounded.Email)
     )
 
     var selectedIndex by remember {
@@ -74,6 +77,7 @@ fun ContentScreen (modifier: Modifier = Modifier, selectedIndex : Int) {
         0-> HomePage()
         1-> ListPage()
         2-> AccountPage()
+        3 -> DetailPage()
     }
 }
 

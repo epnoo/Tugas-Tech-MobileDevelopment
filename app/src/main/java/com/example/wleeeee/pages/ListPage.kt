@@ -34,6 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.wleeeee.FileItems
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,7 +42,7 @@ import com.example.wleeeee.FileItems
 
 
 @Composable
-fun ListPage(modifier: Modifier = Modifier) {
+fun ListPage( modifier: Modifier = Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
