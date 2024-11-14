@@ -35,7 +35,7 @@ import com.example.wleeeee.FileItems
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomePage( modifier: Modifier = Modifier) {
+fun HomePage( navController: NavController ,modifier: Modifier = Modifier) {
     val fileItemsList = listOf(
         FileItems("Catatan MTK", "Dibuka pada tanggal 17 Agustus 2024"),
         FileItems("Jetpack Compose", "Dibuka pada tanggal 12 Januari 2024"),
@@ -100,7 +100,10 @@ fun HomePage( modifier: Modifier = Modifier) {
 
                                 modifier = Modifier
                                     .padding(8.dp)
-                                    .size(120.dp),
+                                    .size(120.dp)
+                                    .clickable {
+                                        navController.navigate("detail_page")
+                                    },
 
 
                                 colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF)),

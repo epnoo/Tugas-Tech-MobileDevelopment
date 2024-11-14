@@ -33,11 +33,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.wleeeee.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailPage(modifier: Modifier = Modifier) {
+fun DetailPage(navController: NavController ,modifier: Modifier = Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -52,12 +53,13 @@ fun DetailPage(modifier: Modifier = Modifier) {
                 navigationIcon = {
                     IconButton(onClick = {
 
-                        // navController.popBackStack()
+                        navController.navigate("main_screen")
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Kembali",
                             tint = Color.White
+
                         )
                     }
                 },

@@ -27,13 +27,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.input.pointer.motionEventSpy
+import androidx.navigation.NavController
 import com.example.wleeeee.pages.AccountPage
 import com.example.wleeeee.pages.DetailPage
 import com.example.wleeeee.pages.HomePage
 import com.example.wleeeee.pages.ListPage
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(navController: NavController,modifier: Modifier = Modifier) {
 
       val navItemList = listOf(
         NavItem("Beranda", Icons.Rounded.Home ),
@@ -66,15 +67,15 @@ fun MainScreen(modifier: Modifier = Modifier) {
             }
         }
     ) { innerPadding ->
-        ContentScreen(modifier = modifier.padding(innerPadding),selectedIndex)
+        ContentScreen(modifier = modifier.padding(innerPadding),selectedIndex = selectedIndex, navController = navController)
 
     }
 }
 
 @Composable
-fun ContentScreen (modifier: Modifier = Modifier, selectedIndex : Int) {
+fun ContentScreen (modifier: Modifier = Modifier, selectedIndex : Int, navController: NavController) {
     when(selectedIndex){
-        0-> HomePage()
+        0-> HomePage(navController = navController)
         1-> ListPage()
         2-> AccountPage()
 
